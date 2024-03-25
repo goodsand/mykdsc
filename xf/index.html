@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html data-dpr="1" style="font-size: 37.5px;" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    <link rel="icon" href="favicon.ico">
+    <title>北京联通宽带续费、套餐升级</title>
+    <link rel="stylesheet" href="css/app.css?ver=0.1">
+	<script src="https://libs.baidu.com/jquery/1.7.2/jquery.min.js"></script>
+	<script src="js/main.js?ver=0.3"></script>
+</head>
+<body style="font-size: 12px;" class="">
+    <noscript>
+		<strong>
+			您的浏览器禁用了或不支持脚本JavaScript，请开启或更换浏览器。
+		</strong>
+	</noscript>
+    <div id="app">
+        <div class="home">
+            <header>
+                <img src="img/logo.png" alt="北京联通" class="logo">
+                <img src="img/herder-01.png" alt="北京联通宽带续费" class="xufei">
+                <div class="gl">北京联通</div>
+            </header>
+            <div class="top">
+                <div class="topinfo">
+                    <ul>
+                        <div id="tpinfo" style="display:none">
+                            <img src="img/touxiang.png" alt="" class="tx">
+                            <li class="kv">
+                                机主姓名&nbsp;&nbsp;&nbsp;
+                                <span class="owner_name"></span>
+                                <span class="fr">宽带至&nbsp;&nbsp;<i class="expiration_date"></i></span>
+                            </li>
+                            <li class="kv">
+                                宽带编码&nbsp;&nbsp;&nbsp;
+                                <span class="broadband_account"></span>
+								<span class="fr">套餐速率&nbsp;&nbsp;<i class="ex_speed" style="padding-right:0.9rem"></i></span>
+                            </li>
+                            <li class="kv">
+								装机地址&nbsp;&nbsp;&nbsp;
+                                <span class="address"></span>
+                            </li>
+                            <li class="kv">
+                                <div class="bottoml">
+                                    <span id="text">当前资费</span>
+                                    <span class="package_name"></span>
+                                </div>
+                                <div class="bottomr">
+                                    <button class="van-button van-button--default van-button--normal" id="btnXu">
+                                        <span class="van-button__text">
+                                            点击续原
+                                        </span>
+                                    </button>
+									<button class="van-button van-button--default van-button--normal" id="btnUp">
+										<span class="van-button__text">
+											点击升级
+										</span>
+									</button>
+                                </div>
+                            </li>
+                        </div>
+						<div id="search">
+                            <img src="img/touxiang.png" alt="" class="tx">
+                            <li class="kv">
+                                &nbsp;&nbsp;&nbsp;
+                                <span ></span>
+                            </li>
+
+							 <li class="kv" style="text-align: center;">
+							 	<button class="van-button1 " id="kdxf">
+										<span class="van-button__text">
+											宽带直接续费
+										</span>
+								</button>
+                            </li>
+
+							 <li class="kv" style="text-align: center;">
+							 	<button class="van-button1 " id="xf299">
+										<span class="van-button__text">
+											续费升速千兆
+										</span>
+								</button>
+                            </li>
+
+							 <li class="kv" style="text-align: center;">
+							 	<button class="van-button1 " id="kdsj">
+										<span class="van-button__text">
+											宽带套餐升档
+										</span>
+								</button>
+                            </li>
+
+							 <li class="kv" style="text-align: center;display:none">
+							 	<button class="van-button1 " id="dqcx">
+										<span class="van-button__text">
+											宽带到期查询
+										</span>
+								</button>
+                            </li>
+							 <li class="kv" style="text-align: center;">
+							 	<button class="van-button1 " id="ddcx">
+										<span class="van-button__text">
+											订单查询
+										</span>
+								</button>
+                            </li>
+							<li class="kv">
+							</li>
+						</div>
+						<li class="last" style="display:block">
+                            <img src="img/xfkb.png" class="kb">
+                            <span class="animated fadeInUp">
+                                【升级千兆】升级千兆套餐低至176元/月！
+                            </span>
+                        </li>
+						<li class="last" style="display:none">
+                            <img src="img/xfkb.png" class="kb">
+                            <span class="animated fadeInUp">
+                                【老用户专享】老客户享优惠升千兆，微信咨询办理！
+                            </span>
+                        </li>
+						<li class="last" style="display:none">
+                            <img src="img/xfkb.png" class="kb">
+                            <span class="animated fadeInUp">
+                                【千兆提速】500M升千兆，一年仅需+330元！
+                            </span>
+                        </li>
+                        <li class="last" style="display:none">
+                            <img src="img/xfkb.png" class="kb">
+                            <span class="animated fadeInUp">
+                                【5G全家福包年折扣】166/239/299档全家福享2年8折！
+                            </span>
+                        </li>
+
+
+                    </ul>
+                </div>
+            </div>
+
+
+
+
+            <div class="serve">
+				<ul class="box">
+					<li class="list"><a href="https://a.bjunicom.com.cn/GdGV2C"><img src="img/1.png" alt="5G升级包"/></a></li>
+					<li class="list"><a href="https://a.bjunicom.com.cn/GdGV2a"><img src="img/2.png" alt="宽带千兆包"/></a></li>
+					<li class="list"><a href="https://a.bjunicom.com.cn/GdGV2J"><img src="img/3.png" alt="IPTV会员"/></a></li>
+					<li class="list"><a href="https://a.bjunicom.com.cn/GdGUiN"><img src="img/4.png" alt="WIFI满屋"/></a></li>
+					
+
+					<span class="justify_fix"></span>
+					
+				</ul>
+				<div class="bllc">
+                    <h2 class="fang">
+                        办理流程
+                    </h2>
+                    <ul>
+                        <li>
+                            <div>1</div>
+                            <div class="text">
+                                <h4>
+                                    用户下单
+                                </h4>
+                                <span>
+                                    选择续费办理方式：线上办理，微信、支付宝、沃钱包支付。支付时请认准收款方账户为联通官方渠道（非第三方商家名称）。
+                                </span>
+                            </div>
+                        </li>
+                        <li>
+                            <div>2</div>
+                            <div class="text">
+                                <h4>
+                                    受理时间（9:00-18:00）
+                                </h4>
+                                <span>
+                                    营业员核实原套餐是否可以续费和欠费情况，如有问题会致电和您说明情况。
+                                </span>
+							</div>
+                        </li>
+                        <li>
+                            <div>3</div>
+                            <div class="text">
+                                <h4>办理成功</h4>
+                                <span>开具发票根据您填写的邮箱，会将《联通电子发票》发送给您。默认开具个人实名发票，如需开具单位名称发票，下单时请勿填写邮箱地址，联系下发微信客服单独开票。</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="QS yq">
+                    <img src="img/QSimg1.png"  style="margin-top: -15px;">
+                    <div class="content">
+                        <div class="imgs">
+                            <img src="img/touxiang.png">
+                            <img src="img/icon.png">
+                        </div>
+                        <div class="text">
+                            <div class="h3">
+                                问： 显示的速率与我办理的不一致？
+                            </div>
+                            <!---->
+                            <div class="p">
+                                <div class="span">
+                                    页面显示的是套餐速率，不包含单独订购宽带提速包后叠加的速率。宽带续费仅为套餐办理续费，不包含宽带提速包的费用。
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="content">
+                        <div class="imgs">
+                            <img src="img/touxiang.png">
+                            <img src="img/icon.png">
+                        </div>
+                        <div class="text">
+                            <div class="h3">
+                                问： 我打算过几个月搬家，能先改成按月交么？
+                            </div>
+                            <!---->
+                            <div class="p">
+                                <div class="span">
+                                    宽带包年优惠合约到期后<b>如果不续约</b>会自动为您<b>转为标准包月资费</b>，您只要按月缴纳包月费用即可。宽带标准包月资费会比包年优惠后月费贵不少，您可以先续包年，到您搬家的时候只需要办理<b>宽带移机</b>到新住址即可。
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="content">
+                        <div class="imgs">
+                            <img src="img/touxiang.png">
+                            <img src="img/icon.png">
+                        </div>
+                        <div class="text">
+                            <div class="h3">
+                                问： 宽带不使用，一定要撤机吗？
+                            </div>
+                            <!---->
+                            <div class="p">
+                                <div class="span">
+                                    您不需要撤机，只需要<b>办理停机保号</b>就可以。您可以添加下方企业微信客服咨询。
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="content">
+                        <div class="imgs">
+                            <img src="img/touxiang.png">
+                            <img src="img/icon.png">
+                        </div>
+                        <div class="text">
+                            <div class="h3">
+                                问： 线上办理时间有要求吗？
+                            </div>
+                            <!---->
+                            <div class="p">
+                                <div class="span">
+                                    线上随时可办理，当天18:00前的订单当天可受理完毕，18:00后的订单次日受理。为了保障您的宽带顺利续费，<b>请避免月底办理</b>，且月末最后一天线上订单可能会导致续费失败或延后生效问题。
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="content">
+                        <div class="imgs">
+                            <img src="img/touxiang.png">
+                            <img src="img/icon.png">
+                        </div>
+                        <div class="text">
+                            <div class="h3">
+                                问： 线上办理时让填写收货地址有什么用？
+                            </div>
+                            <!---->
+                            <div class="p">
+                                <div class="span">
+                                    此收货信息原先为邮寄纸质发票使用，现联通已全面改为电子发票直接推送至电子邮箱，<b>无需实际收货地址</b>信息，此信息您随意填写即可。
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="content">
+                        <div class="imgs">
+                            <img src="img/touxiang.png">
+                            <img src="img/icon.png">
+                        </div>
+                        <div class="text">
+                            <div class="h3">
+                                问： 我办理续费时支付金额是0？
+                            </div>
+                            <!---->
+                            <div class="p">
+                                <div class="span">
+									如果您看到支付金额显示为0，您上一次办理的应该属于0元<b>免预存合约优惠</b>，您的宽带费用是按月缴纳的，本次您仍需要点击订单支付继续您的合约方可按优惠后的月费缴纳，否则您的宽带费用将按标准包月资费收取。
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="content">
+                        <div class="imgs">
+                            <img src="img/touxiang.png">
+                            <img src="img/icon.png">
+                        </div>
+                        <div class="text">
+                            <div class="h3">
+                                问： 为什么我办理时看到的宽带网速比以前办理的低？
+                            </div>
+                            <!---->
+                            <div class="p">
+                                <div class="span">
+									您看到的网速是您最初办理的套餐名称而<b>不是您的实际网速</b>，由于联通已多次进行过宽带提速，满足提速条件的宽带<b>直接续费可为您提速到最新速率</b>，可以联系下方企业微信客服查询您的实际网速。
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="QS">
+                    <img src="img/QSimg.png" alt="" style="margin-top: -15px;">
+                    <div class="content">
+                        <div class="imgs">
+                            <img src="img/touxiang.png">
+                            <img src="img/kficon.png">
+                        </div>
+                        <div class="text">
+                            <div class="h3">
+                                为什么我必须到营业厅，不能线上续费办理？
+                            </div>
+                            <!---->
+                            <div class="p">
+                                <div class="xu">1.</div>
+                                <div class="span">
+                                    原套餐产品或优惠已经停办，线上只可以办理<b>宽带套餐升级</b>方式进行续费。
+                                </div>
+                            </div>
+                            <div class="p">
+                                <div class="xu">2.</div>
+                                <div class="span">
+                                    您当前的宽带已过包年优惠期，当前为<b>包月</b>资费，只可以办理<b>宽带套餐升级</b>方式进行续费。
+                                </div>
+                            </div>
+                            <div class="p">
+                                <div class="xu">3.</div>
+                                <div class="span">
+                                    使用的是<b>户口本</b>、<b>护照</b>等办理的宽带
+                                </div>
+                            </div>
+                            <div class="p">
+                                <div class="xu">4.</div>
+                                <div class="span">
+                                    宽带绑定了手机号码，手机号码存在停机等
+                                    <b>异常使用情况</b>。
+                                </div>
+                            </div>
+                            <div class="p">
+                                <div class="xu">5.</div>
+                                <div class="span">
+                                    原续新在合约期内的存费送手机号码不可加入智慧沃家全家福套餐
+                                </div>
+                            </div>
+                            <div class="p">
+                                <div class="xu">6.</div>
+                                <div class="span">
+                                    <b>FTTB包月</b>
+                                    120元原续原、原续新 无法办理，营业厅主厅办理
+                                </div>
+                            </div>
+                            <div class="p">
+                                <div class="xu">7.</div>
+                                <div class="span">
+                                    原套餐转换为新套餐，名下手机卡
+                                    <b>超过5张</b>
+                                    ，营业厅主厅办理
+                                </div>
+                            </div>
+                         </div>
+                    </div>
+                    <div class="content">
+                        <div class="imgs">
+                            <img src="img/touxiang.png">
+                        </div>
+                        <div class="text">
+                            <div class="h3">
+                                企业微信客服
+                            </div>
+							<div class="p">
+                                <div class="span">
+                                    微信扫码或长按识别添加一对一专属客服，或者微信直接添加企业微信联系人，搜索企业联系人号码<b>15611023148</b>
+                                </div>
+                            </div>
+						<img src="img/qywx.png" alt="企业微信客服" style="width:75%;padding-left:20%">	
+                         </div>
+                    </div>
+                </div>
+                <div class="tel">
+                    业务内容咨询客服电话：
+                    <a href="tel:01063711000">010-63711000</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

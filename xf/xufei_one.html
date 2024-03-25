@@ -1,0 +1,523 @@
+<html lang="en" data-dpr="1" style="font-size: 37.5px;"><head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    <title>北京联通宽带续费快速办理</title>
+
+    <script src="https://libs.baidu.com/jquery/1.7.2/jquery.min.js"></script>
+	<script>
+
+	var R = { 
+	Q: function (key) {
+	var s = window.location.href.split(key);
+	return s ? s[1] : s;
+	}
+}
+var number=R.Q('#');
+
+$(function ()
+{
+function buypost(e) {
+
+	ajaxPost('1000.php', e, function (data) {
+        if (data.ErrorCode == 0) {
+			
+		console.log(data);
+        }
+    });
+
+}
+
+
+//接口调用方法
+function ajaxPost(url, params, callback) {
+
+	var jsonpName = "_jsonp" + Math.random().toString(36).substr(2);
+	$.ajax({
+		type: "POST",
+		url: url,
+		contentType: "application/json",
+		data: params,
+		dataType: "json",
+		jsonp: 'callback',
+		jsonpCallback: jsonpName,
+		success: function (data) {
+			callback(data);
+		},
+		error: function (err) {
+			console.log('# 请求不成功 #'+err);
+		}
+	});
+}
+
+function popmsg(e,msg){
+	$(".modal-body").text(msg);
+	$('#loading').css("display","block");
+	if(e>0){
+		setTimeout(function(){
+         $('#loading').css("display","none");
+        },e);
+	}	
+}
+	
+$("#buy").click(function ()
+　　{
+	 popmsg(0,"请稍侯...");
+	 var postdata={
+		"number":number,
+		"name":$("#name").val(),
+		"num":$("#num").val(),
+		"phone":$("#phone").val(),
+		"pid":$("#pid").val(),
+		"email":$("#email").val(),
+		"taitou":$("#taitou").val(),
+		"tongyi":$("#nsrshibiehao").val(),
+		}
+if($("#name").val()&&$("#phone").val()){
+	$.ajax({
+		type : "post",
+		url : "1000.php",
+		data : postdata,
+		async : false,
+		dataType : "json",
+		error : function(request) {
+			popmsg(3000,"预受理失败[网络连接失败]，请尝试重新提交！");
+			return;
+			},
+		success : function(data) {
+			console.log(data);
+			popmsg(0,data.msg);
+			}
+		});
+
+console.log(postdata);
+}else{
+popmsg(3000,"请输入联系人和联系电话");
+}
+　　});
+$(".checkbox_style").click(function()
+{
+	if($(this).val()==1){
+	 $("#qiyexinxi").css("display","block");
+	}else{
+		$("#qiyexinxi").css("display","none");
+	}
+
+});
+})
+
+	</script>
+    <style type="text/css">
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  box-sizing: border-box;
+}
+.upData{
+	overflow: hidden;
+	background-color: #f3f3f3
+}
+
+.upData .header{
+	background-color: #f3f3f3
+}
+
+.upData hr{
+	border: none;
+	border-top: .009259rem solid #eee
+}
+
+.upData .form{
+	background-color: #fff
+}
+
+.upData .form .formrow{
+	position: relative;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	font-size: .351852rem;
+	line-height: .925926rem;
+	padding-top: .462963rem
+}
+
+.upData .form .formrow label{
+	width: 2.5rem;
+	padding-left: .648148rem;
+	font-weight: 700
+}
+
+.upData .form .formrow input{
+	-webkit-box-flex: 1;
+	-ms-flex: 1;
+	flex: 1;
+	border-radius: .074074rem;
+	padding-left: .333333rem;
+	border: .009259rem solid #ccc;
+	margin-right:.333333rem;
+}
+
+.upData .form .formrow .btns button{
+	width: 3.083333rem;
+	height: .925926rem;
+	line-height: .833333rem;
+	border: .009259rem solid #ccc;
+	color: #ea7249;
+	background-color: #fff;
+	border-radius: .074074rem
+}
+
+.upData .form .formrow .btns .know{
+	margin-right: .425926rem
+}
+
+.upData .form .formrow .btns .know.ok{
+	border-color: #ea7249;
+	color: #ea7249
+}
+
+.upData .form .formrow .help{
+	margin-right: .833333rem
+}
+
+.upData .form .formrow.red input{
+	border-color: #dc143c
+}
+
+.upData .form .formrow.wz{
+	padding-left: .648148rem;
+	color: #999;
+	padding-top: 0;
+	padding-bottom: 0;
+	font-size: .277778rem
+}
+
+
+.upData .form .wz2{
+	padding: .462963rem .462963rem .462963rem .648148rem;
+	color: #999;
+	font-size: .277778rem;
+	line-height: .462963rem
+}
+
+.upData .form .wz2 span{
+	color: #fa9e51
+}
+
+.upData .example{
+	line-height: .481481rem;
+	font-size: .314815rem;
+	background-color: #f3f3f3;
+	padding: .462963rem .555556rem .648148rem .555556rem;
+}
+
+.upData .example .jiedan{
+	color: #ea7249
+}
+
+.upData .example .sl{
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	padding-top: .648148rem
+}
+
+.upData .example .sl span{
+	width: 1.111111rem;
+	color: #fe7400;
+	font-size: .296296rem
+}
+
+.upData .example .sl .ck{
+	padding: .277778rem .277778rem .37037rem .277778rem;
+	-webkit-box-flex: 1;
+	-ms-flex: 1;
+	flex: 1;
+	margin-right: .185185rem;
+	background-color: #fff;
+	border-radius: .074074rem
+}
+
+.upData .example .sl .ck span{
+	color: #1779ff
+}
+
+.upData .example .sl .ck a{
+	text-decoration: underline;
+	list-style-position: outside;
+	color: #1779ff;
+	-webkit-text-decoration-color: #1779ff;
+	text-decoration-color: #1779ff
+}
+
+.upData .example button{
+	position: fixed;
+	bottom: 0;
+	left: -.925926rem;
+	width: 120%;
+	height: 1.388889rem;
+	line-height: 1.296296rem;
+	font-size: .388889rem;
+	color: #fff;
+	background-color: #fe7400;
+	text-align: center;
+	border: none
+}
+
+.header{
+	position: relative;
+	width: 100%;
+	height: 1.574074rem;
+	line-height: 1.574074rem;
+	text-align: center;
+	font-size: .388889rem;
+	color: #999
+}
+
+.header img{
+	position: absolute;
+	top: .37037rem;
+	left: .555556rem;
+	width: 1.685185rem;
+	height: .796296rem
+}
+.modal-open {
+	overflow: hidden
+}
+
+.modal {
+	position: fixed;
+	top: 45%;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: 1050;
+	display: none;
+	-webkit-overflow-scrolling: touch;
+	outline: 0
+}
+
+.modal.fade .modal-dialog {
+	-webkit-transition: -webkit-transform .3s ease-out;
+	-o-transition: -o-transform .3s ease-out;
+	transition: transform .3s ease-out;
+	-webkit-transform: translate(0,-25%);
+	-ms-transform: translate(0,-25%);
+	-o-transform: translate(0,-25%);
+	transform: translate(0,-25%)
+}
+
+.modal.in .modal-dialog {
+	-webkit-transform: translate(0,0);
+	-ms-transform: translate(0,0);
+	-o-transform: translate(0,0);
+	transform: translate(0,0)
+}
+
+.modal-open .modal {
+	overflow-x: hidden;
+	overflow-y: auto
+}
+
+.modal-dialog {
+	position: relative;
+	width: auto;
+	margin: 10px
+}
+
+.modal-content {
+	position: relative;
+	background-color: #fff;
+	-webkit-background-clip: padding-box;
+	background-clip: padding-box;
+	border: 1px solid #999;
+	border: 1px solid rgba(0,0,0,.2);
+	border-radius: 6px;
+	outline: 0;
+	-webkit-box-shadow: 0 3px 9px rgba(0,0,0,.5);
+	box-shadow: 0 3px 9px rgba(0,0,0,.5)
+}
+
+.modal-backdrop {
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: 1040;
+	background-color: #000
+}
+
+.modal-backdrop.fade {
+	filter: alpha(opacity=0);
+	opacity: 0
+}
+
+.modal-backdrop.in {
+	filter: alpha(opacity=50);
+	opacity: .5
+}
+
+.modal-header {
+	padding: 15px;
+	border-bottom: 1px solid #e5e5e5
+}
+
+.modal-header .close {
+	margin-top: -2px
+}
+
+.modal-title {
+	margin: 0;
+	line-height: 1.42857143;
+	text-align-last:center
+}
+
+.modal-body {
+	position: relative;
+	padding: 15px
+}
+
+.modal-footer {
+	padding: 15px;
+	text-align: right;
+	border-top: 1px solid #e5e5e5
+}
+
+.modal-footer .btn+.btn {
+	margin-bottom: 0;
+	margin-left: 5px
+}
+
+.modal-footer .btn-group .btn+.btn {
+	margin-left: -1px
+}
+
+.modal-footer .btn-block+.btn-block {
+	margin-left: 0
+}
+
+.modal-scrollbar-measure {
+	position: absolute;
+	top: -9999px;
+	width: 50px;
+	height: 50px;
+	overflow: scroll
+}
+
+@media (min-width:768px) {
+	.modal-dialog {
+		width: 600px;
+		margin: 30px auto
+	}
+
+	.modal-content {
+		-webkit-box-shadow: 0 5px 15px rgba(0,0,0,.5);
+		box-shadow: 0 5px 15px rgba(0,0,0,.5)
+	}
+
+	.modal-sm {
+		width: 300px
+	}
+}
+
+@media (min-width:992px) {
+	.modal-lg {
+		width: 900px
+	}
+}
+
+    </style>
+</head>
+<body style="font-size: 12px;">
+<div id="app">
+
+        <div class="upData">
+            <div class="header">
+                <img src="http://10010.bjkdsc.top/xf/img/logo.png" alt="中国联通">
+                北京联通宽带续费办理
+            </div>
+            <div class="form">
+                <div class="formrow">
+                    <label ><span style="color:red">*</span>机主姓名</label>
+                    <input type="text" name="name" id="name" value="" placeholder="宽带机主姓名">
+                </div>
+				<div class="formrow">
+                    <label ><span style="color:red">*</span>宽带号码</label>
+                    <input type="text" name="num" id="num" value="" placeholder="11位宽带/固话/套内手机号码">
+                </div>
+                <div class="formrow">
+                    <label ><span style="color:red">*</span>联系电话</label>
+                    <input type="tel" name="phone" id="phone" placeholder="常用手机号码">
+                </div>
+                <div class="formrow">
+                    <label >机主身份证号码</label>
+                    <input type="text" name="pid" id="pid" placeholder="宽带机主身份证号码">
+                </div>
+                <div class="formrow">
+                    <label >发票邮箱</label>
+                    <input type="text" name="email" id="email" value="" placeholder="接收发票邮箱">
+                </div>
+                <div class="formrow">
+                    <label >发票类型</label>
+                    <label>
+                        <input type="radio" class="checkbox_style" checked="" value="0" name="is_ge">个人
+                    </label>
+                    &nbsp;&nbsp;&nbsp;&nbsp;
+                </div>
+				<div id="qiyexinxi" style="display:none">
+                <div class="formrow autoinvoicediv">
+                    <label >发票抬头</label>
+                    <input type="text" name="taitou" id="taitou" value="" placeholder="发票抬头">
+
+                </div>
+                <div class="formrow">
+                    <label >统一社会信用代码</label>
+                    <input type="text" name="nsrshibiehao" id="nsrshibiehao" value="" placeholder="统一社会信用代码">
+                </div>
+			   </div>
+            </div>
+
+            <div class="example">
+                <div class="jiedan">
+                    【中台窗口】联系人和电话请填写您最近常用的信息，以便营业厅和您联系。业务员会和您电话沟通，核实信息无误后办理并收取费用。
+                </div>
+ <button type="button" id="buy">立即下单</button>
+            </div>
+        </div>
+
+</div>
+
+<div class="modal fade" id="loading" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" data-backdrop="static">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="myModalLabel">【提示】</h4>
+            </div>
+            <div class="modal-body">
+                请稍候。。。
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+</body></html>

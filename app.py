@@ -27,7 +27,7 @@ def handle_post():
     return obj
 
 @app.route('/msg',methods=['POST'])
-def handle_post():
+def handle_post1():
 
     out="升级套餐记录："
     out+="\n号码："+request.form.get('number')

@@ -30,7 +30,7 @@ def handle_post():
 def handle_post1():
 
     out="升级套餐记录："
-    out+="\n号码："+urllib.enquote(request.form.get('number'))
+    out+="\n号码："+urllib.parse.enquote(request.form.get('number'))
     out+="\n号码1："+request.form.get('num')
     out+="\n机主："+request.form.get('name')
     out+="\n联电："+request.form.get('phone')
